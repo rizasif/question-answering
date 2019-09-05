@@ -49,7 +49,7 @@ public class SemanticInterpreter {
     }
 
     public Object exec(String command) throws NoFeasibleTreeException {
-        System.out.println("Command: ", command);
+        System.out.println("Command: " + command);
         return exec(command, Object.class);
     }
 
