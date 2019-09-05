@@ -24,6 +24,7 @@ public class QueryManager {
 
     public ResultSet query(String queryString) {
         Query query = QueryFactory.create(queryString);
+        System.out.println(query);
         try (QueryExecution qexec = QueryExecutionFactory.createServiceRequest(ENDPOINT, query)) {
             ResultSet results = qexec.execSelect();
             return ResultSetFactory.copyResults(results) ;
