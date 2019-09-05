@@ -1,8 +1,8 @@
 package org.codeontology;
 
 public class Settings {
-    public static final String MAIN_ENDPOINT = "http://localhost:3030/OpenJDK?query";
-    public static final String LANG_ENDPOINT = "http://localhost:3030/OpenJDK_Lang?query";
+    public static final String MAIN_ENDPOINT = "http://localhost:3030/OpenJDK?";
+    public static final String LANG_ENDPOINT = "http://localhost:3030/OpenJDK_Lang?";
     public static final String ENDPOINT = MAIN_ENDPOINT;
 
     private static final String NLP = "../nlp/";
