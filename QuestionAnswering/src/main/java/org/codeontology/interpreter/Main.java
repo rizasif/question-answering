@@ -26,6 +26,7 @@ public class Main {
             try {
                 System.out.print("> ");
                 String command = s.nextLine();
+                System.out.println("Command: " + command);
                 Object result = interpreter.exec(command);
                 System.out.println();
                 System.out.println("Answer: " + result);
