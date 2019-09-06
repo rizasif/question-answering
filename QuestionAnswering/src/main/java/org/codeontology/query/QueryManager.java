@@ -38,9 +38,9 @@ public class QueryManager {
 
     public String queryString(String query, String variable) {
         try {
-            System.out.println("QueryString:: query: " + query + " variable: " + variable);
+            // System.out.println("QueryString:: query: " + query + " variable: " + variable);
             String rtr = query(query).next().get(variable).toString();
-            System.out.println("Result: " + rtr);
+            // System.out.println("Result: " + rtr);
             return rtr;
         } catch (Exception e) {
             return null;

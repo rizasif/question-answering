@@ -13,9 +13,9 @@ public abstract class CodeElementIndividual {
     private final String uri;
 
     public CodeElementIndividual(String uri) {
-        // if (uri == null || uri.trim().equals("")) {
-        //     throw new IllegalArgumentException("URI cannot be null or empty");
-        // }
+        if (uri == null || uri.trim().equals("")) {
+            throw new IllegalArgumentException("URI cannot be null or empty");
+        }
 
         String enclosed = Utils.encloseUri(uri);
 

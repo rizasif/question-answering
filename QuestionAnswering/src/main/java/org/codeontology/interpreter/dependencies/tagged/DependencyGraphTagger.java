@@ -74,7 +74,7 @@ public class DependencyGraphTagger {
         TypeIndividual type = TypeFactory.getInstance().getTypeByReflection(clazz);
         Set<TypeIndividual> typeSingleton = Collections.singleton(type);
         typeMap.put(leaf, typeSingleton);
-        System.out.println("Tagging " + argument + " as: " + typeSingleton);
+        // System.out.println("Tagging " + argument + " as: " + typeSingleton);
     }
 
     private void tagMethod(DependencyGraphNode node) {
@@ -98,22 +98,22 @@ public class DependencyGraphTagger {
 
         typeMap.put(node, types);
 
-        System.out.println(node.getLabel() + " tagged as\n" +  types + "\n" + ranking);
+        // System.out.println(node.getLabel() + " tagged as\n" +  types + "\n" + ranking);
 
     }
 
     private MethodRanking rankNode(DependencyGraphNode node, List<Set<TypeIndividual>> types) {
         MethodRanking ranking = RankingCache.getInstance().get(node.getLabel(), types);
         if (ranking != null) {
-            System.out.println("Cached Ranking found!");
+            // System.out.println("Cached Ranking found!");
             return ranking;
         }
 
-        System.out.println("Querying CodeOntology...");
+        // System.out.println("Querying CodeOntology...");
         List<MethodIndividual> methods = MethodFactory.getInstance()
                 .getMatchingMethods(types, null);
 
-        System.out.println("Ranking...");
+        // System.out.println("Ranking...");
         NaturalLanguageCommand command = new NaturalLanguageCommand(node.getLabel());
         MethodRanker ranker = new MethodRanker(command);
         ranking = ranker.rank(methods);
